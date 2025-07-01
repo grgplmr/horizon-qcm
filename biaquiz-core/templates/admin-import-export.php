@@ -25,7 +25,7 @@ if (!defined('ABSPATH')) {
                 <div class="inside">
                     <p><?php _e('Importez des quiz depuis un fichier CSV ou JSON. Le fichier doit respecter le format BIAQuiz.', 'biaquiz-core'); ?></p>
                     
-                    <form method="post" enctype="multipart/form-data" class="import-form">
+                    <form method="post" enctype="multipart/form-data" class="import-form" id="import-form">
                         <?php wp_nonce_field('biaquiz_import'); ?>
                         
                         <table class="form-table">
@@ -116,7 +116,7 @@ if (!defined('ABSPATH')) {
                 <div class="inside">
                     <p><?php _e('Exportez vos quiz existants pour sauvegarde ou transfert vers un autre site.', 'biaquiz-core'); ?></p>
                     
-                    <form method="post" class="export-form">
+                    <form method="post" class="export-form" id="export-form">
                         <?php wp_nonce_field('biaquiz_export'); ?>
                         
                         <table class="form-table">
