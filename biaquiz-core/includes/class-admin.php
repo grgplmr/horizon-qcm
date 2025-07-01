@@ -84,21 +84,6 @@ class BIAQuiz_Admin {
             array(__CLASS__, 'dashboard_page')
         );
         
-        add_submenu_page(
-            'biaquiz-dashboard',
-            __('Tous les Quiz', 'biaquiz-core'),
-            __('Tous les Quiz', 'biaquiz-core'),
-            'edit_posts',
-            'edit.php?post_type=biaquiz'
-        );
-        
-        add_submenu_page(
-            'biaquiz-dashboard',
-            __('Ajouter un Quiz', 'biaquiz-core'),
-            __('Ajouter un Quiz', 'biaquiz-core'),
-            'edit_posts',
-            'post-new.php?post_type=biaquiz'
-        );
         
         add_submenu_page(
             'biaquiz-dashboard',
