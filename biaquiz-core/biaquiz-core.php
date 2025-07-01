@@ -103,7 +103,8 @@ class BIAQuiz_Core {
             'includes/class-acf-integration.php',
             'includes/class-admin.php',
             'includes/class-import-export.php',
-            'includes/class-quiz-handler.php'
+            'includes/class-quiz-handler.php',
+            'includes/mime-types.php'
         );
         
         foreach ($files as $file) {
