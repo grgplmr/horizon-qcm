@@ -1,0 +1,303 @@
+/**
+ * Styles pour l'interface d'import/export de BIAQuiz
+ */
+
+.biaquiz-import-export-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.biaquiz-import-export-container .postbox {
+    margin-bottom: 2rem;
+}
+
+.biaquiz-import-export-container .postbox h2 {
+    background: #f1f1f1;
+    border-bottom: 1px solid #ddd;
+    margin: 0;
+    padding: 1rem 1.5rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.biaquiz-import-export-container .inside {
+    padding: 1.5rem;
+}
+
+/* Section Documentation */
+.documentation-section {
+    grid-column: 1 / -1;
+}
+
+.documentation-section pre {
+    background: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 4px;
+    padding: 1rem;
+    overflow-x: auto;
+    font-size: 0.875rem;
+    line-height: 1.4;
+}
+
+.documentation-section code {
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+}
+
+.documentation-section ul {
+    margin-left: 1.5rem;
+}
+
+.documentation-section li {
+    margin-bottom: 0.5rem;
+}
+
+/* Formulaires */
+.form-table th {
+    width: 150px;
+    font-weight: 600;
+}
+
+.form-table td {
+    padding: 1rem 0;
+}
+
+.form-table input[type="file"],
+.form-table select {
+    width: 100%;
+    max-width: 400px;
+}
+
+.form-table .description {
+    margin-top: 0.5rem;
+    font-style: italic;
+    color: #666;
+}
+
+/* Informations du fichier */
+.file-info {
+    background: #e7f3ff;
+    border: 1px solid #b3d9ff;
+    border-radius: 4px;
+    padding: 1rem;
+    margin-top: 1rem;
+    font-size: 0.875rem;
+}
+
+/* Barre de progression */
+.import-progress {
+    margin-top: 2rem;
+    padding: 1rem;
+    background: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 4px;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 20px;
+    background: #e9ecef;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 0.5rem;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #007cba, #00a0d2);
+    width: 0%;
+    transition: width 0.3s ease;
+    border-radius: 10px;
+}
+
+.progress-text {
+    text-align: center;
+    font-size: 0.875rem;
+    color: #666;
+}
+
+/* Résultats d'import */
+.import-results {
+    margin-top: 2rem;
+    padding: 1rem;
+    border-radius: 4px;
+}
+
+.import-success {
+    background: #d4edda;
+    border: 1px solid #c3e6cb;
+    color: #155724;
+}
+
+.import-success h3 {
+    margin-top: 0;
+    color: #155724;
+}
+
+.import-success ul {
+    margin-left: 1.5rem;
+}
+
+.import-success li {
+    margin-bottom: 0.25rem;
+}
+
+/* Messages de notification */
+.notice {
+    margin: 1rem 0;
+    padding: 1rem;
+    border-left: 4px solid;
+    background: #fff;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
+}
+
+.notice-error {
+    border-left-color: #dc3232;
+    background: #fef7f7;
+}
+
+.notice-success {
+    border-left-color: #46b450;
+    background: #f7fff7;
+}
+
+.notice p {
+    margin: 0;
+}
+
+/* Boutons */
+.button {
+    transition: all 0.2s ease;
+}
+
+.button:hover {
+    transform: translateY(-1px);
+}
+
+.button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none !important;
+}
+
+/* Options de formulaire */
+.form-table label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.form-table input[type="checkbox"] {
+    margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+    .biaquiz-import-export-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .biaquiz-import-export-container .inside {
+        padding: 1rem;
+    }
+    
+    .form-table th,
+    .form-table td {
+        display: block;
+        width: 100%;
+        padding: 0.5rem 0;
+    }
+    
+    .form-table th {
+        font-weight: 600;
+        margin-bottom: 0.25rem;
+    }
+    
+    .form-table input[type="file"],
+    .form-table select {
+        max-width: 100%;
+    }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.import-results,
+.file-info,
+.notice {
+    animation: fadeIn 0.3s ease-out;
+}
+
+/* États de chargement */
+.loading {
+    position: relative;
+    pointer-events: none;
+}
+
+.loading::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.loading::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    margin: -10px 0 0 -10px;
+    border: 2px solid #007cba;
+    border-top-color: transparent;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    z-index: 1;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Amélioration de l'accessibilité */
+.form-table label:focus-within {
+    outline: 2px solid #007cba;
+    outline-offset: 2px;
+}
+
+.button:focus {
+    outline: 2px solid #007cba;
+    outline-offset: 2px;
+}
+
+/* Styles pour les codes d'erreur */
+.error-code {
+    font-family: monospace;
+    background: #f1f1f1;
+    padding: 0.25rem 0.5rem;
+    border-radius: 3px;
+    font-size: 0.875rem;
+}
+

@@ -1,0 +1,208 @@
+{
+  "title": "Quiz d'exemple - Météorologie",
+  "description": "Quiz d'entraînement sur les bases de la météorologie aéronautique",
+  "difficulty": "moyen",
+  "questions": [
+    {
+      "question_text": "Quelle est l'unité de mesure de la pression atmosphérique en aéronautique ?",
+      "question_explanation": "L'hectopascal (hPa) est l'unité standard pour mesurer la pression atmosphérique en météorologie aéronautique.",
+      "answers": [
+        {"answer_text": "Pascal (Pa)", "is_correct": false},
+        {"answer_text": "Hectopascal (hPa)", "is_correct": true},
+        {"answer_text": "Bar", "is_correct": false},
+        {"answer_text": "Atmosphère (atm)", "is_correct": false}
+      ]
+    },
+    {
+      "question_text": "Quelle est la pression atmosphérique standard au niveau de la mer ?",
+      "question_explanation": "La pression atmosphérique standard au niveau de la mer est de 1013,25 hPa (ou 1013 hPa en valeur arrondie).",
+      "answers": [
+        {"answer_text": "1000 hPa", "is_correct": false},
+        {"answer_text": "1013 hPa", "is_correct": true},
+        {"answer_text": "1020 hPa", "is_correct": false},
+        {"answer_text": "1030 hPa", "is_correct": false}
+      ]
+    },
+    {
+      "question_text": "Comment varie la pression atmosphérique avec l'altitude ?",
+      "question_explanation": "La pression atmosphérique diminue avec l'altitude car il y a moins d'air au-dessus.",
+      "answers": [
+        {"answer_text": "Elle augmente", "is_correct": false},
+        {"answer_text": "Elle diminue", "is_correct": true},
+        {"answer_text": "Elle reste constante", "is_correct": false},
+        {"answer_text": "Elle varie de façon imprévisible", "is_correct": false}
+      ]
+    },
+    {
+      "question_text": "Qu'est-ce qu'un front froid ?",
+      "question_explanation": "Un front froid est une zone où une masse d'air froid remplace une masse d'air chaud.",
+      "answers": [
+        {"answer_text": "Une zone de basse pression", "is_correct": false},
+        {"answer_text": "Une masse d'air froid qui remplace l'air chaud", "is_correct": true},
+        {"answer_text": "Une zone sans vent", "is_correct": false},
+        {"answer_text": "Un anticyclone", "is_correct": false}
+      ]
+    },
+    {
+      "question_text": "Quel type de nuage est associé aux orages ?",
+      "question_explanation": "Le cumulonimbus est le nuage d'orage par excellence, pouvant s'élever très haut dans l'atmosphère.",
+      "answers": [
+        {"answer_text": "Cirrus", "is_correct": false},
+        {"answer_text": "Stratus", "is_correct": false},
+        {"answer_text": "Cumulonimbus", "is_correct": true},
+        {"answer_text": "Altocumulus", "is_correct": false}
+      ]
+    },
+    {
+      "question_text": "Qu'est-ce que la visibilité météorologique ?",
+      "question_explanation": "La visibilité météorologique est la distance maximale à laquelle on peut voir et identifier un objet.",
+      "answers": [
+        {"answer_text": "La distance de vol", "is_correct": false},
+        {"answer_text": "La hauteur des nuages", "is_correct": false},
+        {"answer_text": "La distance maximale de vision", "is_correct": true},
+        {"answer_text": "La vitesse du vent", "is_correct": false}
+      ]
+    },
+    {
+      "question_text": "Quelle est la cause principale du brouillard ?",
+      "question_explanation": "Le brouillard se forme quand l'air devient saturé en vapeur d'eau, généralement par refroidissement.",
+      "answers": [
+        {"answer_text": "Le vent fort", "is_correct": false},
+        {"answer_text": "La saturation de l'air en vapeur d'eau", "is_correct": true},
+        {"answer_text": "La haute pression", "is_correct": false},
+        {"answer_text": "L'altitude élevée", "is_correct": false}
+      ]
+    },
+    {
+      "question_text": "Qu'est-ce qu'un anticyclone ?",
+      "question_explanation": "Un anticyclone est une zone de haute pression atmosphérique, généralement associée au beau temps.",
+      "answers": [
+        {"answer_text": "Une zone de basse pression", "is_correct": false},
+        {"answer_text": "Une zone de haute pression", "is_correct": true},
+        {"answer_text": "Un type de nuage", "is_correct": false},
+        {"answer_text": "Un phénomène de vent", "is_correct": false}
+      ]
+    },
+    {
+      "question_text": "Comment se forme la rosée ?",
+      "question_explanation": "La rosée se forme quand la vapeur d'eau se condense sur les surfaces froides pendant la nuit.",
+      "answers": [
+        {"answer_text": "Par évaporation", "is_correct": false},
+        {"answer_text": "Par condensation sur les surfaces froides", "is_correct": true},
+        {"answer_text": "Par précipitation", "is_correct": false},
+        {"answer_text": "Par sublimation", "is_correct": false}
+      ]
+    },
+    {
+      "question_text": "Qu'est-ce que le point de rosée ?",
+      "question_explanation": "Le point de rosée est la température à laquelle l'air devient saturé en vapeur d'eau.",
+      "answers": [
+        {"answer_text": "La température de l'air", "is_correct": false},
+        {"answer_text": "La température de saturation", "is_correct": true},
+        {"answer_text": "La température du sol", "is_correct": false},
+        {"answer_text": "La température des nuages", "is_correct": false}
+      ]
+    },
+    {
+      "question_text": "Quel instrument mesure la pression atmosphérique ?",
+      "question_explanation": "Le baromètre est l'instrument qui mesure la pression atmosphérique.",
+      "answers": [
+        {"answer_text": "Thermomètre", "is_correct": false},
+        {"answer_text": "Baromètre", "is_correct": true},
+        {"answer_text": "Anémomètre", "is_correct": false},
+        {"answer_text": "Hygromètre", "is_correct": false}
+      ]
+    },
+    {
+      "question_text": "Qu'est-ce que l'humidité relative ?",
+      "question_explanation": "L'humidité relative est le rapport entre la quantité de vapeur d'eau présente et la quantité maximale possible.",
+      "answers": [
+        {"answer_text": "La quantité d'eau dans l'air", "is_correct": false},
+        {"answer_text": "Le pourcentage de saturation de l'air", "is_correct": true},
+        {"answer_text": "La température de l'air", "is_correct": false},
+        {"answer_text": "La vitesse d'évaporation", "is_correct": false}
+      ]
+    },
+    {
+      "question_text": "Quel phénomène peut réduire drastiquement la visibilité ?",
+      "question_explanation": "Le brouillard peut réduire la visibilité à quelques mètres seulement.",
+      "answers": [
+        {"answer_text": "Le vent", "is_correct": false},
+        {"answer_text": "Le brouillard", "is_correct": true},
+        {"answer_text": "La haute pression", "is_correct": false},
+        {"answer_text": "Le soleil", "is_correct": false}
+      ]
+    },
+    {
+      "question_text": "Qu'est-ce qu'une inversion de température ?",
+      "question_explanation": "Une inversion de température se produit quand la température augmente avec l'altitude au lieu de diminuer.",
+      "answers": [
+        {"answer_text": "Quand il fait plus chaud en altitude", "is_correct": true},
+        {"answer_text": "Quand il fait plus froid en altitude", "is_correct": false},
+        {"answer_text": "Quand la température est constante", "is_correct": false},
+        {"answer_text": "Quand il y a du vent", "is_correct": false}
+      ]
+    },
+    {
+      "question_text": "Quel est l'effet du vent sur la température ressentie ?",
+      "question_explanation": "Le vent augmente la sensation de froid en accélérant l'évaporation et les échanges thermiques.",
+      "answers": [
+        {"answer_text": "Il réchauffe", "is_correct": false},
+        {"answer_text": "Il refroidit", "is_correct": true},
+        {"answer_text": "Aucun effet", "is_correct": false},
+        {"answer_text": "Il réchauffe puis refroidit", "is_correct": false}
+      ]
+    },
+    {
+      "question_text": "Qu'est-ce qu'un grain ?",
+      "question_explanation": "Un grain est un phénomène météorologique violent et localisé, souvent accompagné de vents forts et de précipitations.",
+      "answers": [
+        {"answer_text": "Un type de nuage", "is_correct": false},
+        {"answer_text": "Un phénomène violent et localisé", "is_correct": true},
+        {"answer_text": "Une mesure de pression", "is_correct": false},
+        {"answer_text": "Un instrument météo", "is_correct": false}
+      ]
+    },
+    {
+      "question_text": "Comment se forme un nuage ?",
+      "question_explanation": "Un nuage se forme quand l'air humide s'élève, se refroidit et que la vapeur d'eau se condense.",
+      "answers": [
+        {"answer_text": "Par réchauffement de l'air", "is_correct": false},
+        {"answer_text": "Par refroidissement et condensation", "is_correct": true},
+        {"answer_text": "Par évaporation directe", "is_correct": false},
+        {"answer_text": "Par compression de l'air", "is_correct": false}
+      ]
+    },
+    {
+      "question_text": "Qu'est-ce que la turbulence atmosphérique ?",
+      "question_explanation": "La turbulence atmosphérique est constituée de mouvements d'air irréguliers et chaotiques.",
+      "answers": [
+        {"answer_text": "Un vent régulier", "is_correct": false},
+        {"answer_text": "Des mouvements d'air irréguliers", "is_correct": true},
+        {"answer_text": "L'absence de vent", "is_correct": false},
+        {"answer_text": "Un phénomène de pression", "is_correct": false}
+      ]
+    },
+    {
+      "question_text": "Quel est l'effet de l'altitude sur la température ?",
+      "question_explanation": "En général, la température diminue avec l'altitude d'environ 2°C par 1000 pieds.",
+      "answers": [
+        {"answer_text": "La température augmente", "is_correct": false},
+        {"answer_text": "La température diminue", "is_correct": true},
+        {"answer_text": "La température reste constante", "is_correct": false},
+        {"answer_text": "L'effet est imprévisible", "is_correct": false}
+      ]
+    },
+    {
+      "question_text": "Qu'est-ce qu'un METAR ?",
+      "question_explanation": "Un METAR est un rapport météorologique d'observation régulière utilisé en aviation.",
+      "answers": [
+        {"answer_text": "Un type de nuage", "is_correct": false},
+        {"answer_text": "Un rapport météorologique", "is_correct": true},
+        {"answer_text": "Un instrument de mesure", "is_correct": false},
+        {"answer_text": "Une prévision météo", "is_correct": false}
+      ]
+    }
+  ]
+}
+

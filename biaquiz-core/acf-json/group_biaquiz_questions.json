@@ -1,0 +1,240 @@
+{
+    "key": "group_biaquiz_questions",
+    "title": "Questions du Quiz",
+    "fields": [
+        {
+            "key": "field_questions",
+            "label": "Questions",
+            "name": "questions",
+            "type": "repeater",
+            "instructions": "Ajoutez les 20 questions du quiz. Chaque question doit avoir exactement 4 réponses avec une seule bonne réponse.",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "field_question_text",
+            "min": 20,
+            "max": 20,
+            "layout": "block",
+            "button_label": "Ajouter une question",
+            "sub_fields": [
+                {
+                    "key": "field_question_text",
+                    "label": "Question",
+                    "name": "question_text",
+                    "type": "textarea",
+                    "instructions": "Texte de la question",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "Saisissez votre question ici...",
+                    "maxlength": "",
+                    "rows": 3,
+                    "new_lines": "br"
+                },
+                {
+                    "key": "field_question_image",
+                    "label": "Image (optionnelle)",
+                    "name": "question_image",
+                    "type": "image",
+                    "instructions": "Image d'illustration pour la question (optionnelle)",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "preview_size": "thumbnail",
+                    "library": "all",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": "jpg,jpeg,png,gif,webp"
+                },
+                {
+                    "key": "field_question_explanation",
+                    "label": "Explication",
+                    "name": "question_explanation",
+                    "type": "textarea",
+                    "instructions": "Explication de la bonne réponse (affichée après validation)",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "Explication de la réponse...",
+                    "maxlength": "",
+                    "rows": 3,
+                    "new_lines": "br"
+                },
+                {
+                    "key": "field_answers",
+                    "label": "Réponses",
+                    "name": "answers",
+                    "type": "repeater",
+                    "instructions": "Ajoutez exactement 4 réponses. Cochez la case 'Correct' pour la bonne réponse.",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "collapsed": "field_answer_text",
+                    "min": 4,
+                    "max": 4,
+                    "layout": "table",
+                    "button_label": "Ajouter une réponse",
+                    "sub_fields": [
+                        {
+                            "key": "field_answer_text",
+                            "label": "Réponse",
+                            "name": "answer_text",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "70",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "Texte de la réponse...",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_answer_correct",
+                            "label": "Correct",
+                            "name": "is_correct",
+                            "type": "true_false",
+                            "instructions": "Cochez si c'est la bonne réponse",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "30",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "Bonne réponse",
+                            "default_value": 0,
+                            "ui": 1,
+                            "ui_on_text": "Oui",
+                            "ui_off_text": "Non"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "key": "field_quiz_settings",
+            "label": "Paramètres du Quiz",
+            "name": "quiz_settings",
+            "type": "group",
+            "instructions": "Configuration avancée du quiz",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "key": "field_shuffle_questions",
+                    "label": "Mélanger les questions",
+                    "name": "shuffle_questions",
+                    "type": "true_false",
+                    "instructions": "Mélanger l'ordre des questions à chaque tentative",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "33",
+                        "class": "",
+                        "id": ""
+                    },
+                    "message": "Activer le mélange",
+                    "default_value": 1,
+                    "ui": 1,
+                    "ui_on_text": "Oui",
+                    "ui_off_text": "Non"
+                },
+                {
+                    "key": "field_shuffle_answers",
+                    "label": "Mélanger les réponses",
+                    "name": "shuffle_answers",
+                    "type": "true_false",
+                    "instructions": "Mélanger l'ordre des réponses pour chaque question",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "33",
+                        "class": "",
+                        "id": ""
+                    },
+                    "message": "Activer le mélange",
+                    "default_value": 1,
+                    "ui": 1,
+                    "ui_on_text": "Oui",
+                    "ui_off_text": "Non"
+                },
+                {
+                    "key": "field_show_explanations",
+                    "label": "Afficher les explications",
+                    "name": "show_explanations",
+                    "type": "true_false",
+                    "instructions": "Afficher les explications après chaque réponse",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "34",
+                        "class": "",
+                        "id": ""
+                    },
+                    "message": "Activer les explications",
+                    "default_value": 1,
+                    "ui": 1,
+                    "ui_on_text": "Oui",
+                    "ui_off_text": "Non"
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "biaquiz"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Champs pour gérer les questions et réponses des quiz BIA"
+}
+

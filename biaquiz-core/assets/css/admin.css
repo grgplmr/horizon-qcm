@@ -1,0 +1,508 @@
+/**
+ * Styles pour l'interface d'administration de BIAQuiz
+ */
+
+/* Tableau de bord */
+.biaquiz-dashboard-stats {
+    margin: 2rem 0;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.stat-card {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.stat-icon {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.stat-number {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #007cba;
+    margin-bottom: 0.25rem;
+}
+
+.stat-label {
+    font-size: 0.875rem;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Contenu du tableau de bord */
+.biaquiz-dashboard-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+}
+
+.dashboard-widget {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.dashboard-widget h3 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    color: #333;
+    font-size: 1.1rem;
+    border-bottom: 2px solid #007cba;
+    padding-bottom: 0.5rem;
+}
+
+/* Actions rapides */
+.quick-actions {
+    display: grid;
+    gap: 0.75rem;
+}
+
+.quick-actions .button {
+    justify-self: start;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.quick-actions .button:hover {
+    transform: translateX(5px);
+}
+
+/* Quiz populaires */
+.popular-quiz-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid #eee;
+}
+
+.popular-quiz-item:last-child {
+    border-bottom: none;
+}
+
+.quiz-info strong {
+    display: block;
+    color: #333;
+    margin-bottom: 0.25rem;
+}
+
+.quiz-category {
+    font-size: 0.875rem;
+    color: #666;
+    background: #f1f1f1;
+    padding: 0.25rem 0.5rem;
+    border-radius: 12px;
+}
+
+.quiz-stats {
+    text-align: right;
+    font-size: 0.875rem;
+}
+
+.quiz-stats .attempts {
+    display: block;
+    color: #007cba;
+    font-weight: 500;
+}
+
+.quiz-stats .avg-score {
+    display: block;
+    color: #666;
+    margin-top: 0.25rem;
+}
+
+/* Tentatives récentes */
+.attempt-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid #eee;
+}
+
+.attempt-item:last-child {
+    border-bottom: none;
+}
+
+.attempt-info strong {
+    display: block;
+    color: #333;
+    margin-bottom: 0.25rem;
+}
+
+.attempt-time {
+    font-size: 0.875rem;
+    color: #666;
+}
+
+.attempt-score .score {
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 0.875rem;
+}
+
+.attempt-score .score.perfect {
+    background: #d4edda;
+    color: #155724;
+}
+
+.attempt-score .score.good {
+    background: #fff3cd;
+    color: #856404;
+}
+
+.attempt-score .score.average {
+    background: #f8d7da;
+    color: #721c24;
+}
+
+/* Filtres de statistiques */
+.statistics-filters {
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 1rem;
+    margin: 1rem 0 2rem;
+}
+
+.statistics-filters form {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.statistics-filters select {
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+/* Section de statistiques */
+.statistics-section {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.statistics-section h2 {
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    color: #333;
+    border-bottom: 2px solid #007cba;
+    padding-bottom: 0.5rem;
+}
+
+/* Badges de score */
+.score-badge {
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 0.875rem;
+}
+
+.score-badge.good {
+    background: #d4edda;
+    color: #155724;
+}
+
+.score-badge.average {
+    background: #fff3cd;
+    color: #856404;
+}
+
+.score-badge.poor {
+    background: #f8d7da;
+    color: #721c24;
+}
+
+/* Statuts des quiz */
+.status-active {
+    color: #46b450;
+    font-weight: bold;
+}
+
+.status-inactive {
+    color: #dc3232;
+    font-weight: bold;
+}
+
+.status-error {
+    color: #dc3232;
+    font-weight: bold;
+}
+
+/* Actions rapides dans la liste */
+.biaquiz-quick-action {
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.biaquiz-quick-action:hover {
+    color: #007cba;
+}
+
+/* Messages de notification */
+.biaquiz-notice {
+    margin: 1rem 0;
+    padding: 1rem;
+    border-left: 4px solid;
+    background: #fff;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
+}
+
+.biaquiz-notice.notice-success {
+    border-left-color: #46b450;
+    background: #f7fff7;
+}
+
+.biaquiz-notice.notice-error {
+    border-left-color: #dc3232;
+    background: #fef7f7;
+}
+
+.biaquiz-notice.notice-warning {
+    border-left-color: #ffb900;
+    background: #fffbf0;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+    .biaquiz-dashboard-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .dashboard-right {
+        order: -1;
+    }
+}
+
+@media (max-width: 768px) {
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .statistics-filters form {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .popular-quiz-item,
+    .attempt-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    
+    .quiz-stats,
+    .attempt-score {
+        text-align: left;
+    }
+}
+
+@media (max-width: 480px) {
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .dashboard-widget {
+        padding: 1rem;
+    }
+    
+    .stat-card {
+        padding: 1rem;
+    }
+    
+    .stat-number {
+        font-size: 1.5rem;
+    }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.dashboard-widget,
+.stat-card,
+.statistics-section {
+    animation: fadeIn 0.3s ease-out;
+}
+
+/* États de chargement */
+.loading {
+    position: relative;
+    pointer-events: none;
+    opacity: 0.6;
+}
+
+.loading::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    margin: -10px 0 0 -10px;
+    border: 2px solid #007cba;
+    border-top-color: transparent;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Amélioration de l'accessibilité */
+.dashboard-widget:focus-within,
+.stat-card:focus-within {
+    outline: 2px solid #007cba;
+    outline-offset: 2px;
+}
+
+.button:focus,
+.biaquiz-quick-action:focus {
+    outline: 2px solid #007cba;
+    outline-offset: 2px;
+}
+
+/* Styles pour les graphiques */
+.chart-container {
+    position: relative;
+    height: 300px;
+    margin: 1rem 0;
+}
+
+/* Personnalisation des tableaux WordPress */
+.wp-list-table .column-quiz_status {
+    width: 100px;
+}
+
+.wp-list-table .column-quiz_attempts {
+    width: 80px;
+    text-align: center;
+}
+
+.wp-list-table .column-quiz_avg_score {
+    width: 100px;
+    text-align: center;
+}
+
+/* Styles pour les paramètres */
+.form-table th {
+    width: 200px;
+    font-weight: 600;
+}
+
+.form-table td {
+    padding: 1rem 0;
+}
+
+.form-table .description {
+    margin-top: 0.5rem;
+    font-style: italic;
+    color: #666;
+}
+
+/* Styles pour les onglets */
+.nav-tab-wrapper {
+    margin-bottom: 2rem;
+}
+
+.nav-tab {
+    transition: all 0.2s ease;
+}
+
+.nav-tab:hover {
+    background: #f1f1f1;
+}
+
+.nav-tab-active {
+    background: #007cba;
+    color: #fff;
+    border-color: #007cba;
+}
+
+/* Styles pour les métaboxes */
+.postbox {
+    margin-bottom: 1.5rem;
+}
+
+.postbox .hndle {
+    background: #f1f1f1;
+    border-bottom: 1px solid #ddd;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.postbox .inside {
+    padding: 1.5rem;
+}
+
+/* Styles pour les alertes */
+.biaquiz-alert {
+    padding: 1rem;
+    border-radius: 4px;
+    margin: 1rem 0;
+    border: 1px solid;
+}
+
+.biaquiz-alert.alert-info {
+    background: #e7f3ff;
+    border-color: #b3d9ff;
+    color: #0c5460;
+}
+
+.biaquiz-alert.alert-warning {
+    background: #fff3cd;
+    border-color: #ffeaa7;
+    color: #856404;
+}
+
+.biaquiz-alert.alert-danger {
+    background: #f8d7da;
+    border-color: #f5c6cb;
+    color: #721c24;
+}
+
+.biaquiz-alert.alert-success {
+    background: #d4edda;
+    border-color: #c3e6cb;
+    color: #155724;
+}
+
