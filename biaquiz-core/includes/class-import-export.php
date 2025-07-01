@@ -734,5 +734,131 @@ class BIAQuiz_Import_Export {
             'mime_type' => 'text/csv'
         );
     }
+
+    /**
+     * Historiser une action d'import ou d'export
+     */
+    private static function log_history($action, $filename, $success, $count = null, $error = '') {
+        $history = get_option('biaquiz_import_export_history', array());
+        $history[] = array(
+            'timestamp' => time(),
+            'action'    => $action,
+            'filename'  => $filename,
+            'success'   => $success,
+            'count'     => $count,
+            'error'     => $error,
+            'user'      => wp_get_current_user()->user_login,
+        );
+        update_option('biaquiz_import_export_history', $history);
+    }
+
+    /**
+     * Traitement de l'import (sans AJAX)
+     */
+    public static function handle_import() {
+        if (!current_user_can('manage_options')) {
+            wp_die(__('Accès non autorisé', 'biaquiz-core'));
+        }
+
+        if (!isset($_FILES['import_file']) || $_FILES['import_file']['error'] !== UPLOAD_ERR_OK) {
+            echo '<div class="notice notice-error"><p>' . esc_html(__('Erreur lors de l\'upload du fichier', 'biaquiz-core')) . '</p></div>';
+            return;
+        }
+
+        $file          = $_FILES['import_file'];
+        $category_slug = sanitize_text_field($_POST['import_category']);
+        $category      = get_term_by('slug', $category_slug, 'quiz_category');
+
+        if (!$category) {
+            echo '<div class="notice notice-error"><p>' . esc_html(__('Catégorie invalide', 'biaquiz-core')) . '</p></div>';
+            return;
+        }
+
+        $options         = isset($_POST['import_options']) ? (array) $_POST['import_options'] : array();
+        $update_existing = !empty($_POST['update_existing']) || in_array('update_existing', $options, true);
+        $auto_publish    = !empty($_POST['auto_publish']) || in_array('activate', $options, true);
+
+        $ext = strtolower(pathinfo($file['name'], PATHINFO_EXTENSION));
+
+        try {
+            if ($ext === 'csv') {
+                $result = self::import_csv($file['tmp_name'], $category, $update_existing, $auto_publish);
+            } elseif ($ext === 'json') {
+                $result = self::import_json($file['tmp_name'], $category, $update_existing, $auto_publish);
+            } else {
+                throw new Exception(__('Format de fichier non supporté', 'biaquiz-core'));
+            }
+
+            $count = $result['imported'] + $result['updated'];
+            echo '<div class="notice notice-success is-dismissible"><p>';
+            printf(_n('%d quiz importé.', '%d quiz importés.', $count, 'biaquiz-core'), $count);
+            echo '</p></div>';
+
+            if (!empty($result['errors'])) {
+                echo '<div class="notice notice-warning"><p>' . implode('<br>', array_map('esc_html', $result['errors'])) . '</p></div>';
+            }
+
+            self::log_history('import', $file['name'], true, $count);
+        } catch (Exception $e) {
+            echo '<div class="notice notice-error"><p>' . esc_html($e->getMessage()) . '</p></div>';
+            self::log_history('import', $file['name'], false, null, $e->getMessage());
+        }
+    }
+
+    /**
+     * Traitement de l'export (sans AJAX)
+     */
+    public static function handle_export() {
+        if (!current_user_can('manage_options')) {
+            wp_die(__('Accès non autorisé', 'biaquiz-core'));
+        }
+
+        $category_slug = sanitize_text_field($_POST['export_category'] ?? '');
+        $format        = sanitize_text_field($_POST['export_format'] ?? 'json');
+        $options       = isset($_POST['export_options']) ? (array) $_POST['export_options'] : array();
+
+        $include_stats  = !empty($_POST['include_stats']) || in_array('include_stats', $options, true);
+        $include_images = !empty($_POST['include_images']) || in_array('include_images', $options, true);
+        $active_only    = in_array('active_only', $options, true);
+
+        $args = array(
+            'post_type'      => 'biaquiz',
+            'posts_per_page' => -1,
+            'post_status'    => $active_only ? 'publish' : array('publish', 'draft'),
+        );
+
+        if ($category_slug) {
+            $args['tax_query'] = array(
+                array(
+                    'taxonomy' => 'quiz_category',
+                    'field'    => 'slug',
+                    'terms'    => $category_slug,
+                ),
+            );
+        }
+
+        $quizzes = get_posts($args);
+
+        if (empty($quizzes)) {
+            echo '<div class="notice notice-error"><p>' . esc_html(__('Aucun quiz à exporter', 'biaquiz-core')) . '</p></div>';
+            return;
+        }
+
+        if ($format === 'json') {
+            $result = self::export_json($quizzes, $include_stats, $include_images);
+        } else {
+            $result = self::export_csv($quizzes, $include_stats, $include_images);
+        }
+
+        self::log_history('export', $result['filename'], true, count($quizzes));
+
+        nocache_headers();
+        header('Content-Type: ' . $result['mime_type']);
+        header('Content-Disposition: attachment; filename=' . $result['filename']);
+        header('Content-Length: ' . strlen($result['content']));
+
+        echo $result['content'];
+        exit;
+    }
 }
 
